@@ -1,5 +1,13 @@
 const { Router } = require("express");
 const router = Router();
+router.get("/", (req, res) => {
+  res.json({
+    Suma: "/api/calculadora/suma",
+    Resta: "/api/calculadora/resta",
+    multi: "/api/calculadora/multi",
+    div: "/api/calculadora/div",
+  });
+});
 router.get("/api/calculadora/suma", (req, res) => {
   const { a, b } = req.body;
   if (a && b) {
